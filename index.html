@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheetos Sweepstakes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Untitled.jpeg" alt="Cheetos Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#how-to-participate">How to Participate</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cta">
+                <a href="#sign-up" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section HTML -->
+<div id="hero">
+    <div class="hero-content">
+        <h1>Enter the Sweepstakes Now!</h1>
+        <p>Enter now to secure your chance to win amazing prizes!</p>
+        <a href="#" class="btn-primary">Enter Now</a>
+        
+        <!-- Countdown Timer HTML -->
+        <div id="countdown-container">
+            <div id="countdown"></div>
+        </div>
+    </div>
+</div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Sweepstakes</h2>
+            <p>Prepare to fuel your college experience with the Cheetos College Sweepstakes! Enter for a chance to win an incredible supply of Cheetos snacks that will keep you energized and focused throughout the semester.</p>
+            <p>Submitting your entry is effortless—so easy, you can do it with your non-dominant hand (and no worries about Cheeto dust)!</p>
+            <p>Don't miss out—the sweepstakes entry period closes on October 4th, 2024, at midnight EST. Act now and secure your chance to win the ultimate snack stash!</p>
+            <a href="#sign-up" class="btn-primary">Enter Now to Secure Your Chance!</a>
+            <p class="highlight">Win a year's supply of Cheetos snacks!</p>
+        </div>
+    </section>
+
+    <!-- Steps to Participate -->
+    <section id="how-to-participate">
+        <div class="container">
+            <h2>How to Enter</h2>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>Complete the registration form below with your details.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>Share the sweepstakes with your friends to increase your chances of winning.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Stay tuned and get ready to win a year's supply of Cheetos snacks!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-Up Form -->
+    <section id="sign-up">
+        <div class="container">
+            <h2>Enter the Sweepstakes Now!</h2>
+            <form action="SweepstakesServlet" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group checkbox-container">
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        Yes, I am 18 years of age or older and agree to the <a href="#terms" style="color: #ff6600; text-decoration: underline;">Official Rules</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Your Entry</button>
+            </form>
+            <p class="terms">
+                *NO PURCHASE NECESSARY. Open to legal residents of the 50 United States, including D.C. and Puerto Rico, who are 18 years of age or older. Employees of the Sponsor, Administrator, Promotion Parties, their related entities, and members of their immediate families or households are not eligible. Sweepstakes ends on 10/4/24. Void where prohibited. See <a href="#terms" style="color: #ff6600; text-decoration: underline;">Official Rules</a> for full details.
+            </p>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes">
+        <div class="container">
+            <h2>Prizes</h2>
+            <div class="prizes-gallery">
+                <div class="prize-item">
+                    <a href="#" class="open-modal" data-modal="recipe-book-details">
+                        <img src="3.png" alt="Cheetos Recipe Book">
+                    </a>
+                </div>
+                <div class="prize-item">
+                    <a href="#" class="open-modal" data-modal="meet-greet-details">
+                        <img src="13d192ae-d9af-4874-b08a-a5b2c2e280e1.avif" alt="Exclusive Meet & Greet">
+                    </a>
+                </div>
+                <div class="prize-item">
+                    <a href="#" class="open-modal" data-modal="tuition-assistance-details">
+                        <img src="mentor-3513738_1280-compress.webp" alt="Grand Prize: Tuition Assistance">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Recipe Book -->
+    <div id="recipe-book-details" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Cheetos Recipe Book</h2>
+            <p>
+                Discover a world of culinary creativity with the <strong>Cheetos Recipe Book</strong>. This exclusive cookbook
+                features over 50 innovative recipes that transform your favorite snack into mouth-watering dishes. Whether
+                you’re craving something savory like Cheetos-Crusted Chicken Tenders or something sweet like Cheetos Ice
+                Cream, this book has it all. Plus, it comes with Cheetos-branded kitchen gadgets to enhance your cooking
+                experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal for Meet & Greet -->
+    <div id="meet-greet-details" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Exclusive Meet & Greet</h2>
+            <p>
+                Get the chance of a lifetime with the <strong>Exclusive Meet & Greet</strong>. Meet a celebrity chef who’s a
+                fan of Cheetos or an influencer associated with the brand. This once-in-a-lifetime opportunity allows you to
+                interact, ask questions, and get insights into how Cheetos can be used in various dishes. Whether virtual or
+                in-person, this experience is sure to be unforgettable.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal for Tuition Assistance -->
+    <div id="tuition-assistance-details" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Grand Prize: Tuition Assistance</h2>
+            <p>
+                Win a scholarship or tuition reimbursement worth $5,000 to help cover your educational expenses. The <strong>Tuition Assistance</strong> prize is designed to make your college journey a little easier, allowing you to focus on your studies without the financial burden. This prize can be used towards one semester or a set amount towards your education, making higher education more accessible and affordable.
+            </p>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Participants Say</h2>
+            <blockquote>
+                "I had so much fun participating in the Cheetos Sweepstakes! The prizes are awesome!" - Alex M.
+            </blockquote>
+            <blockquote>
+                "Winning was the best feeling ever! Thanks, Cheetos!" - Sarah K.
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <!-- Existing Footer Links -->
+        <div class="footer-links">
+            <a href="#contact">Contact Us</a>
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+
+        <!-- New Footer Message and Social Media Links -->
+        <div id="footer-message">
+            <p>Don't be a cheesehead--share now so your friends could win too!</p>
+            <div id="social-media-links">
+                <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
+                <a href="https://twitter.com/yourprofile" target="_blank">X</a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <p>&copy; 2024 Cheetos. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

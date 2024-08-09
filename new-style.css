@@ -1,0 +1,237 @@
+/* Reset some default styles */
+body, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+/* Header */
+header {
+    background: #ff6600;
+    color: #fff;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .cta .btn-primary {
+    background: #fff;
+    color: #ff6600;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    background: url('cheetos-background.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 5em 1em;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+#hero .btn-primary {
+    background: #ff6600;
+    color: #fff;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+/* Section Styles */
+section {
+    padding: 2em 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    gap: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5em;
+}
+
+.form-group input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input {
+    margin-right: 0.5em;
+}
+
+.btn-primary {
+    background: #ff6600;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.terms {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2em;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Prizes Gallery */
+.prizes-gallery {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    flex: 1;
+    max-width: 300px;
+}
+
+.prize-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Testimonials */
+blockquote {
+    background: #fff;
+    padding: 1em;
+    border-left: 5px solid #ff6600;
+    margin-bottom: 1em;
+    font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-links a,
+#social-media-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#footer-message {
+    margin-top: 20px;
+}
+
+#footer-message p {
+    margin: 0;
+    font-size: 16px;
+}
+
+#social-media-links {
+    margin-top: 10px;
+}
+
+#social-media-links a {
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#social-media-links a:hover {
+    color: #ff6600; /* Cheetos brand color for hover effect */
+}

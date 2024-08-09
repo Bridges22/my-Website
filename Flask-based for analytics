@@ -1,0 +1,20 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/enter_sweepstakes', methods=['POST'])
+def enter_sweepstakes():
+    data = request.json
+    name = data.get('name')
+    email = data.get('email')
+    phone = data.get('phone')
+    terms = data.get('terms')
+
+    if terms:
+        # Save data to the database or file
+        return jsonify(message="Entry received!"), 200
+    else:
+        return jsonify(message="You must agree to the terms and conditions."), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)
