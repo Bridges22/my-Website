@@ -9,47 +9,76 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="Untitled.jpeg" alt="Cheetos Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#how-to-participate">How to Participate</a></li>
-                    <li><a href="#prizes">Prizes</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="cta">
-                <a href="#sign-up" class="btn-primary">Sign Up</a>
-            </div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="Untitled.jpeg" alt="Cheetos Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-to-participate">How to Participate</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <a href="#" class="btn-primary" id="sign-up-btn">Sign Up</a>
         </div>
     </header>
 
-    <!-- Hero Section HTML -->
+<!-- Sign-Up Modal -->
+<div id="sign-up-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="login-box">
+            <p>Login</p>
+            <form>
+                <div class="user-box">
+                    <input required="" name="" type="text">
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input required="" name="" type="password">
+                    <label>Password</label>
+                </div>
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </a>
+            </form>
+            <p>Don't have an account? <a href="" class="a2">Sign up!</a></p>
+        </div>
+    </div>
+</div>
+
+    <!-- Hero Section -->
 <div id="hero">
     <div class="hero-content">
         <h1>Enter the Sweepstakes Now!</h1>
         <p>Enter now to secure your chance to win amazing prizes!</p>
-        <a href="#" class="btn-primary">Enter Now</a>
-        
-        <!-- Countdown Timer HTML -->
-        <div id="countdown-container">
-            <div id="countdown"></div>
-        </div>
+        <a href="#sign-up" class="btn-primary">Enter Now</a>
     </div>
 </div>
+
+            <!-- Countdown Timer -->
+            <div id="countdown-container">
+                <div id="countdown"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About the Sweepstakes</h2>
             <p>Prepare to fuel your college experience with the Cheetos College Sweepstakes! Enter for a chance to win an incredible supply of Cheetos snacks that will keep you energized and focused throughout the semester.</p>
-            <p>Submitting your entry is effortless—so easy, you can do it with your non-dominant hand (and no worries about Cheeto dust)!</p>
-            <p>Don't miss out—the sweepstakes entry period closes on October 4th, 2024, at midnight EST. Act now and secure your chance to win the ultimate snack stash!</p>
+            <p>Submitting your entry is effortless—so easy, you can do it with your non-dominant hand (and no worries about Cheetos dust)!</p>
+            <p>Don’t miss out—the sweepstakes entry period closes on October 4th, 2024, at midnight EST. Act now and secure your chance to win the ultimate snack stash!</p>
             <a href="#sign-up" class="btn-primary">Enter Now to Secure Your Chance!</a>
             <p class="highlight">Win a year's supply of Cheetos snacks!</p>
         </div>
@@ -57,59 +86,87 @@
 
     <!-- Steps to Participate -->
     <section id="how-to-participate">
-        <div class="container">
-            <h2>How to Enter</h2>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">1</span>
-                    <p>Complete the registration form below with your details.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">2</span>
-                    <p>Share the sweepstakes with your friends to increase your chances of winning.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">3</span>
-                    <p>Stay tuned and get ready to win a year's supply of Cheetos snacks!</p>
-                </div>
+        <h2>How to Enter</h2>
+        <div class="steps-container">
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Complete the registration form below with your details.</p>
             </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Share the sweepstakes with your friends to increase your chances of winning.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Stay tuned and get ready to win a year's supply of Cheetos snacks!</p>
+            </div>
+            <!-- Add more steps as needed -->
         </div>
     </section>
+    
 
-    <!-- Sign-Up Form -->
-    <section id="sign-up">
-        <div class="container">
-            <h2>Enter the Sweepstakes Now!</h2>
-            <form action="SweepstakesServlet" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+    <section id="sign-up" class="max-w-md mx-auto p-6 bg-card rounded-lg shadow-lg relative overflow-hidden">
+        <h2 class="text-3xl font-extrabold text-center text-primary relative z-10">🎉 Enter the Sweepstakes Now! 🎉</h2>
+        <form action="form-handler.php" method="POST" class="mt-4 relative z-10">
+          <!-- CSRF Token Field -->
+          <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+          
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-muted-foreground">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-muted-foreground">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+              placeholder="example@example.com"
+              required
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label for="phone" class="block text-sm font-medium text-muted-foreground">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+              placeholder="(123) 456-7890"
+              required
+            />
+          </div>
+          
+          <div class="flex items-center mb-4">
+            <input type="checkbox" id="ageCheck" name="terms" class="mr-2" required />
+            <label for="ageCheck" class="text-sm text-muted-foreground">
+              Yes, I am 18 years of age or older and agree to the <a href="#" class="text-primary underline">Official Rules</a>.
+            </label>
+          </div>
+          
+          <button type="submit" class="w-full bg-accent text-accent-foreground hover:bg-accent/80 p-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Submit Your Entry
+          </button>
+        </form>
+        
+        <p class="mt-4 text-xs text-muted-foreground text-center relative z-10">
+          *NO PURCHASE NECESSARY. Open to legal residents of the 50 United States, including D.C. and Puerto Rico, who are 18 years of age or older. See
+          <a href="#" class="text-primary underline">Official Rules</a> for full details.
+        </p>
+      </section>
+      
 
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group checkbox-container">
-                    <label>
-                        <input type="checkbox" name="terms" required>
-                        Yes, I am 18 years of age or older and agree to the <a href="#terms" style="color: #ff6600; text-decoration: underline;">Official Rules</a>.
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-primary">Submit Your Entry</button>
-            </form>
-            <p class="terms">
-                *NO PURCHASE NECESSARY. Open to legal residents of the 50 United States, including D.C. and Puerto Rico, who are 18 years of age or older. Employees of the Sponsor, Administrator, Promotion Parties, their related entities, and members of their immediate families or households are not eligible. Sweepstakes ends on 10/4/24. Void where prohibited. See <a href="#terms" style="color: #ff6600; text-decoration: underline;">Official Rules</a> for full details.
-            </p>
-        </div>
-    </section>
 
     <!-- Prizes Section -->
     <section id="prizes">
@@ -187,34 +244,63 @@
             </blockquote>
         </div>
     </section>
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <!-- Existing Footer Links -->
-        <div class="footer-links">
-            <a href="#contact">Contact Us</a>
-            <a href="#terms">Terms & Conditions</a>
-            <a href="#privacy">Privacy Policy</a>
-        </div>
-
-        <!-- New Footer Message and Social Media Links -->
-        <div id="footer-message">
-            <p>Don't be a cheesehead--share now so your friends could win too!</p>
-            <div id="social-media-links">
-                <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
-                <a href="https://twitter.com/yourprofile" target="_blank">X</a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
-            </div>
-        </div>
-
-        <!-- Copyright Notice -->
-        <p>&copy; 2024 Cheetos. All rights reserved.</p>
+<!-- Footer -->
+<footer class="bg-muted dark:bg-muted-foreground text-white py-12">
+    <div class="container mx-auto text-center">
+      <nav class="mb-6">
+        <a href="#contact" class="text-accent hover:text-accent-foreground transition duration-300 font-bold text-lg transform hover:scale-105">Contact Us</a>
+        <span class="mx-2 text-muted">|</span>
+        <a href="#terms" class="text-accent hover:text-accent-foreground transition duration-300 font-bold text-lg transform hover:scale-105">Terms & Conditions</a>
+        <span class="mx-2 text-muted">|</span>
+        <a href="#privacy" class="text-accent hover:text-accent-foreground transition duration-300 font-bold text-lg transform hover:scale-105">Privacy Policy</a>
+      </nav>
+      <p class="text-muted mb-6 font-semibold text-xl italic">Don’t be a cheesehead—share now so your friends could win too!</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="https://www.facebook.com/yourpage" target="_blank" class="text-accent hover:text-accent-foreground transition duration-300 transform hover:scale-110 text-lg font-bold">Facebook</a>
+        <span class="text-muted">|</span>
+        <a href="https://twitter.com/yourprofile" target="_blank" class="text-accent hover:text-accent-foreground transition duration-300 transform hover:scale-110 text-lg font-bold">X</a>
+        <span class="text-muted">|</span>
+        <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-accent hover:text-accent-foreground transition duration-300 transform hover:scale-110 text-lg font-bold">Instagram</a>
+      </div>
+      <p class="text-muted text-sm font-light">© 2024 Cheetos. All rights reserved.</p>
     </div>
-</footer>
-
-
+  </footer>
+  
     <script src="script.js"></script>
+    <script>
+        // Countdown Timer Script
+        const countDownDate = new Date("October 4, 2024 00:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 
+// Get the sign-up button and login form elements
+<script>
+const signUpBtn = document.getElementById('sign-up-btn');
+const loginForm = document.getElementById('login-form');
+const signUpModal = document.getElementById('sign-up-modal');
+
+// Add an event listener to the sign-up button
+signUpBtn.addEventListener('click', () => {
+  // Toggle the modal visibility
+  signUpModal.classList.toggle('show-modal');
+  // Show the login form
+  loginForm.style.display = 'block';
+});
+</script>
 </body>
 </html>
+
+
+
