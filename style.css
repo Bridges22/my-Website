@@ -120,6 +120,28 @@ nav ul li a {
     text-shadow: 2px 2px 4px rgba(2, 2, 2, 0.3); /* Adds a slight shadow to text */
 }
 
+ /* Styles for PCs and larger screens (default) */
+ @media (min-width: 1024px) {
+    #about {
+        min-height: 500px; /* Adjust for larger screens */
+    }
+}
+
+/* Styles for tablets (landscape and portrait) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #about {
+        min-height: 400px; /* Adjust for tablets */
+    }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+    #about {
+        min-height: 300px; /* Adjust for smaller screens */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
+
 #about::before {
     content: '';
     position: absolute;
