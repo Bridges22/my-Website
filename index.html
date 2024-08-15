@@ -27,6 +27,7 @@
             <a href="#" class="btn-primary" id="sign-up-btn">Sign Up</a>
         </div>
     </header>
+        
 
 <!-- Sign-Up Modal -->
 <div id="sign-up-modal" class="modal">
@@ -105,92 +106,91 @@
     </section>
     
 
-    <section id="sign-up" class="max-w-md mx-auto p-6 bg-card rounded-lg shadow-lg relative overflow-hidden">
-        <h2 class="text-3xl font-extrabold text-center text-primary relative z-10">🎉 Enter the Sweepstakes Now! 🎉</h2>
-        <form action="form-handler.php" method="POST" class="mt-4 relative z-10">
-          <!-- CSRF Token Field -->
-          <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-          
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-muted-foreground">Full Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
-              placeholder="John Doe"
-              required
-            />
-          </div>
-          
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-muted-foreground">Email Address:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
-              placeholder="example@example.com"
-              required
-            />
-          </div>
-          
-          <div class="mb-4">
-            <label for="phone" class="block text-sm font-medium text-muted-foreground">Phone Number:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
-              placeholder="(123) 456-7890"
-              required
-            />
-          </div>
-          
-          <div class="flex items-center mb-4">
-            <input type="checkbox" id="ageCheck" name="terms" class="mr-2" required />
-            <label for="ageCheck" class="text-sm text-muted-foreground">
-              Yes, I am 18 years of age or older and agree to the <a href="#" class="text-primary underline">Official Rules</a>.
-            </label>
-          </div>
-          
-          <button type="submit" class="w-full bg-accent text-accent-foreground hover:bg-accent/80 p-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-            Submit Your Entry
-          </button>
-        </form>
-        
-        <p class="mt-4 text-xs text-muted-foreground text-center relative z-10">
-          *NO PURCHASE NECESSARY. Open to legal residents of the 50 United States, including D.C. and Puerto Rico, who are 18 years of age or older. See
-          <a href="#" class="text-primary underline">Official Rules</a> for full details.
+  <!--Submit your entry-section-->
+  <section id="sign-up" class="max-w-md mx-auto p-6 bg-card rounded-lg shadow-lg relative overflow-hidden">
+    <h2 class="text-3xl font-extrabold text-center text-primary relative z-10">🎉 Enter the Sweepstakes Now! 🎉</h2>
+    <form action="form-handler.php" method="POST" class="mt-4 relative z-10">
+     
+     
+        <!-- CSRF Token Field -->
+      <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+  
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-muted-foreground">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+          placeholder="John Doe"
+          required
+        />
+      </div>
+  
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-muted-foreground">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+          placeholder="example@example.com"
+          required
+        />
+      </div>
+  
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-muted-foreground">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="mt-1 block w-full p-3 border border-border rounded-md focus:outline-none focus:ring focus:ring-ring transition duration-200 ease-in-out"
+          placeholder="(123) 456-7890"
+          required
+        />
+      </div>
+  
+      <div class="flex items-center mb-4">
+        <input type="checkbox" id="ageCheck" name="terms" class="mr-2" required />
+        <label for="ageCheck" class="text-sm text-muted-foreground">
+          Yes, I am 18 years of age or older and agree to the <a href="#" class="text-primary underline">Official Rules</a>.
+        </label>
+      </div>
+  
+      <button type="submit" class="w-full bg-accent text-accent-foreground hover:bg-accent/80 p-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+        Submit Your Entry
+      </button>
+    </form>
+  
+    <p class="mt-4 text-xs text-muted-foreground text-center relative z-10">
+      *NO PURCHASE NECESSARY. Open to legal residents of the 50 United States, including D.C. and Puerto Rico, who are 18 years of age or older. See
+      <a href="#" class="text-primary underline">Official Rules</a> for full details.
+    </p>
+  </section>
+  
+
+
+
+    <!-- Giveaway Prize Section -->
+    <div class="giveaway-container">
+        <h1 class="giveaway-title">🎁 Cheetos Snack Giveaway 🎁</h1>
+        <p class="giveaway-description">
+          Enter now for your chance to win a delicious Cheetos snack bundle! Packed with your favorite Cheetos flavors, this giveaway is a dream come true for any Cheetos lover.
         </p>
-      </section>
+        <div class="giveaway-images">
+          <img src="cheetospic.png" alt="Lay's Chips" class="giveaway-image" />
+          <img src="cheeto-puffs.webp" alt="Doritos" class="giveaway-image" />
+          <img src="b7f44014-bef5-4e12-a820-c9b42ad7d0bd_1.980335e366395d85c4980cf2fa7cc31c.webp" alt="Ruffles" class="giveaway-image" />
+          <img src="6e7cd593-d926-4952-b85d-468f35de7786 (1).tif" alt="Cheetos" class="giveaway-image" />
+          <img src="70ffcb17-a589-4622-9d16-c2d3588b2da1_1.1e286694bc6189e5ab73fd132db1c33d.webp" alt="Smartfood" class="giveaway-image" />
+        </div>
+        <div class="giveaway-button-container">
+        </div>
+      </div>
       
 
 
-
-    <!-- Prizes Section -->
-    <section id="prizes">
-        <div class="container">
-            <h2>Prizes</h2>
-            <div class="prizes-gallery">
-                <div class="prize-item">
-                    <a href="#" class="open-modal" data-modal="recipe-book-details">
-                        <img src="3.png" alt="Cheetos Recipe Book">
-                    </a>
-                </div>
-                <div class="prize-item">
-                    <a href="#" class="open-modal" data-modal="meet-greet-details">
-                        <img src="13d192ae-d9af-4874-b08a-a5b2c2e280e1.avif" alt="Exclusive Meet & Greet">
-                    </a>
-                </div>
-                <div class="prize-item">
-                    <a href="#" class="open-modal" data-modal="tuition-assistance-details">
-                        <img src="mentor-3513738_1280-compress.webp" alt="Grand Prize: Tuition Assistance">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Modal for Recipe Book -->
     <div id="recipe-book-details" class="modal">
@@ -232,18 +232,6 @@
         </div>
     </div>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Our Participants Say</h2>
-            <blockquote>
-                "I had so much fun participating in the Cheetos Sweepstakes! The prizes are awesome!" - Alex M.
-            </blockquote>
-            <blockquote>
-                "Winning was the best feeling ever! Thanks, Cheetos!" - Sarah K.
-            </blockquote>
-        </div>
-    </section>
 <!-- Footer -->
 <footer class="bg-muted dark:bg-muted-foreground text-white py-12">
     <div class="container mx-auto text-center">
