@@ -110,16 +110,34 @@ nav ul li a {
 /* About Section */
 #about {
     position: relative;
-    background-image: url('hq720.jpg');
+    background-image: url('757de6d9-7da7-40a5-9a7a-db5f6523636b.jpeg');
     background-size: cover;
     background-position: center;
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.3); /* Darkens the image slightly */
     color: white;
     padding: 50px 20px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a slight shadow to text */
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(2, 2, 2, 0.3); /* Adds a slight shadow to text */
 }
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Adjust opacity as needed */
+    z-index: 1; /* Place it above the background image but below the content */
+    pointer-events: none; /* Prevents interaction with the pseudo-element */
+}
+
+#about > * {
+    position: relative;
+    z-index: 2; /* Ensures text and other content are above the pseudo-element */
+}
+
+
 
 #about h2 {
     font-size: 2.5em;
@@ -159,6 +177,7 @@ nav ul li a {
     color: #ffcc00; /* Link color that stands out against the background */
     text-decoration: underline;
 }
+
 
 /* Steps to Participate Section */
 #how-to-participate {

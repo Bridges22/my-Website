@@ -2,7 +2,6 @@
 // Debugging code
 file_put_contents('debug_log.txt', 'Request method: ' . $_SERVER['REQUEST_METHOD'] . "\n", FILE_APPEND);
 
-
 // Start the session
 session_start();
 
@@ -17,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     echo "This page is only accessible via form submission.";
     exit;
 
-    //Option 2: Redirect to the form page
+    // Option 2: Redirect to the form page
     header('Location: /index.html');
     exit;
+}
 
-
-    // Validate the request method
+// Validate the request method for POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); // Method Not Allowed
     echo json_encode(['message' => 'Invalid request method.']);
