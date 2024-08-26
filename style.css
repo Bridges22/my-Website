@@ -322,20 +322,72 @@ nav ul li a {
 #prize {
     background-color: #FFF8E1; /* Light Cheetos-themed background color */
     border: 2px solid #FF6F00; /* Cheetos-themed border */
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#prize:hover {
+    box-shadow: 0 6px 12px rgba(255, 111, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 #prize h2 {
     color: #FF6F00; /* Cheetos-themed text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+#prize:hover h2 {
+    color: #E65100; /* Darker orange on hover */
 }
 
 #prize img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#prize img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #prize button {
     background-color: #FF6F00; /* Cheetos-themed button color */
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#prize button:hover {
+    background-color: #E65100; /* Darker orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 111, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.prize-item {
+    animation: pulse 2s infinite;
+}
+
+/* Additional CSS for responsiveness */
+@media (max-width: 768px) {
+    .giveaway-images {
+        flex-direction: column;
+    }
+
+    .giveaway-image {
+        width: 100%; /* Makes images full-width on small screens */
+    }
 }
 
 
@@ -745,4 +797,47 @@ footer .font-light {
 .giveaway-button:hover {
     background-color: #E65100;
     transform: scale(1.05);
+}
+
+
+
+/* CSS for the buttons */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #fff;
+    background-color: #ff6600; /* Cheetos color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #e55b00; /* Darker shade for hover effect */
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #fff;
+    background-color: #ff9900; /* Different color for distinction */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #e68a00; /* Darker shade for hover effect */
+}
+
+
+/* smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
