@@ -1,19 +1,22 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f6f6f6;
+    background-color: orangered;
     margin: 0;
     padding: 0;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 10 auto;
     padding: 20px;
 }
 
-h1, h2 {
-    color: #ff6600;
+h1{
+    color: orangered;
+    box-shadow: 0 10px 10px yellow; /* Subtle shadow for depth */
+    font-weight: bold;
+    font-family: fantasy;
 }
 
 /* Header */
@@ -24,7 +27,7 @@ header {
 }
 
 .logo img {
-    height: 60px;
+    height: 80px;
 }
 
 nav ul {
@@ -35,12 +38,11 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-flex;
 }
 
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
 }
 
@@ -55,40 +57,50 @@ nav ul li a {
 
 /* Hero Section */
 #hero {
-    background-image: url('Cheetos\ Banner\ 750x500.jpg'); /* Replace with your background image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 10px 10px;
-    position: relative;
+    background-image: url('th-1497239604.png'); /* Replace with your background image */
+    background-color: transparent;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin:  auto;
+  max-width: 92%; /* adjust width to fit the image */
+  box-shadow: 0 10px 10px orange; /* Subtle shadow for depth */
 }
 
-#hero::before {
+#herio::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 90;
+    left: 98;
+    width: 98.70%;
+    height: 50%;
     background-color: rgba(0, 0, 0, 0.5); /* Overlay to darken the background image */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 23;
 }
 
-#hero h1 {
+#hero h2 {
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: bold;
+    margin-top: 0px;
+    text-shadow: 2px 5px 4px rgb(233, 118, 10); /* Adds a slight shadow to text */
 }
 
 #hero p {
     font-size: 24px;
     margin-bottom: 30px;
+    text-shadow: 2px 5px 4px rgba(2, 2, 2, 0.3); /* Adds a slight shadow to text */
 }
 
 #hero .btn-primary {
@@ -109,15 +121,19 @@ nav ul li a {
 
 /* About Section */
 #about {
-    position: relative;
     background-image: url('757de6d9-7da7-40a5-9a7a-db5f6523636b.jpeg');
     background-size: cover;
-    background-position: center;
-    color: white;
+    height: 50vh;
+    width: 95%;
+    color: yellow;
     padding: 50px 20px;
+    background-position: center;
+    display: flex;
     text-align: center;
     font-weight: bold; /* Make the text bold */
     text-shadow: 2px 2px 4px rgba(2, 2, 2, 0.3); /* Adds a slight shadow to text */
+    margin: auto;
+    flex-direction: column;
 }
 
  /* Styles for PCs and larger screens (default) */
@@ -148,32 +164,42 @@ nav ul li a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-color: transparent; /* Adjust opacity as needed */
-    z-index: 1; /* Place it above the background image but below the content */
+    z-index: 100; /* Place it above the background image but below the content */
     pointer-events: none; /* Prevents interaction with the pseudo-element */
 }
 
 #about > * {
     position: relative;
-    z-index: 2; /* Ensures text and other content are above the pseudo-element */
+    z-index: 20; /* Ensures text and other content are above the pseudo-element */
 }
 
 
 
 #about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2.0em;
+    margin-bottom: 0px;
+    margin-top: -28px;
+    text-shadow: 5px 5px 4px rgba(2, 2, 2, 0.3); /* Adds a slight shadow to text */
+    color: orangered;
+
+
 }
 
 #about p {
-    max-width: 800px;
-    margin: 20px auto;
-    color: #f0f0f0; /* Light Gray for readability */
+    max-width: 500px;
+    margin: 10px auto;
+    color: yellow; /* Text color readability */
+    margin-top: 10px;
+    line-height: 1.40;
+    text-shadow: 5px 5px 4px white(2, 2, 2, 0.3); /* Adds a slight shadow to text */
+    font-weight: bold;
+
 }
 
 #about .btn-primary {
-    margin-top: 20px;
+    margin-top: 0px;
     background-color: #ff6600;
     color: white;
     padding: 10px 20px;
@@ -185,8 +211,9 @@ nav ul li a {
 #about .highlight {
     font-size: 1.5em;
     font-weight: bold;
-    color: #ffd700; /* Gold for highlighted text */
-    margin-top: 20px;
+    color: #ff6600; /* Gold for highlighted text */
+    margin-top: 0px;
+    text-shadow: 2px 2px 2px rgba(253, 189, 14, 0.993); /* Adds a slight shadow to text */
 }
 
 #about .terms {
@@ -203,16 +230,21 @@ nav ul li a {
 
 /* Steps to Participate Section */
 #how-to-participate {
-    background-color: #f4f4f4; /* Light background for contrast */
-    padding: 50px 20px;
+    background-color: orangered; /* Light background for contrast */
+    padding: 20px 20px;
     text-align: center;
-}
+    margin: 0px;
+    margin-top: 0px;
+   
 
 /* Container for steps */
 .steps-container {
     display: flex;
     justify-content: space-around; /* Distribute space between steps */
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 0px; /* Space between grid items */
+    margin-top: 0px;
+}
 }
 
 /* Individual step */
@@ -235,7 +267,7 @@ nav ul li a {
 
 * Sign-Up Form Section */
 #sign-up {
-    background-color: #ffffff; /* White background for form clarity */
+    background-color: orangered; /* White background for form clarity */
     background-image: url('flamin-hot-cheetos-733591-640x360.jpg'); /* Add background image */
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the image */
@@ -243,6 +275,7 @@ nav ul li a {
     text-align: center;
     position: relative;
     overflow: hidden; /* Ensure content stays within bounds */
+    
 }
 
 #sign-up::before {
@@ -263,17 +296,18 @@ nav ul li a {
 }
 
 #sign-up h2 {
-    font-size: 2.5em;
+    font-size: 1.58em;
     margin-bottom: 20px;
     color: orangered; /* Change text color for better readability */
 }
 
 #sign-up label {
     display: block;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
     color: black; /* Change text color for better readability */
     margin-bottom: 5px;
+    
 }
 
 #sign-up input[type="text"],
@@ -281,14 +315,15 @@ nav ul li a {
 #sign-up input[type="tel"] {
     width: calc(100% - 22px); /* Adjust width for padding and border */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid orangered;
     border-radius: 5px;
     font-size: 1em;
-    color: #333;
+    color: orangered;
 }
 
 #sign-up .checkbox-container {
     margin-top: 10px;
+    
 }
 
 #sign-up input[type="checkbox"] {
@@ -304,27 +339,30 @@ nav ul li a {
     font-size: 1.1em;
     cursor: pointer;
     font-weight: bold;
+    
 }
 
 #sign-up .terms {
-    font-size: 0.9em;
+    font-size: 2.9em;
     color: #ffffff; /* Lighter text for terms and conditions */
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 #sign-up a {
     color: #ff6600; /* Link color */
     text-decoration: underline;
+
 }
 
 /* Prizes Section */
 #prize {
-    background-color: #FFF8E1; /* Light Cheetos-themed background color */
+    background-color: orange; /* Light Cheetos-themed background color */
     border: 2px solid #FF6F00; /* Cheetos-themed border */
     padding: 20px;
     border-radius: 15px;
     transition: all 0.3s ease;
+
 }
 
 #prize:hover {
@@ -455,6 +493,8 @@ footer {
     color: white; /* Text color */
     padding: 30px 20px; /* Padding */
     text-align: center; /* Center align text */
+    margin-top: 0px;
+    margin-bottom: opx;
 }
 
 footer nav a {
@@ -508,6 +548,7 @@ footer .font-light {
     color: #ff6600;
     text-align: center;
     margin-top: 20px;
+    box-shadow: 0 10px 10px orangered; /* Subtle shadow for depth */
 }
 
 /* Image Carousel */
@@ -746,10 +787,10 @@ footer .font-light {
 }
 
 .giveaway-title {
-    font-size: 2.5rem;
+    font-size: 1.73rem;
     font-weight: 800;
     color: #FFFFFF;
-    margin-bottom: 1rem;
+    margin-bottom: 1px; /* Adjust space below heading */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -760,15 +801,28 @@ footer .font-light {
 }
 
 .giveaway-images {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    display: grid;
+    /* Grid layout container for 2x2 */
+
+    gap: 2rem;
     flex-wrap: wrap; /* Allows images to wrap if the screen is too narrow */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 100%;
+    margin: 10px 10px;
+    padding: 30px;
+
+    /* Grid layout container for 2x2 */
+
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr; /* Two equal-width columns */
+    grid-template-rows: auto auto; /* Two rows, height auto adjusts to content */
+    gap: 50px; /* Space between grid items */
+    margin: 10px; /* Space around the grid */
 }
 
 .giveaway-image {
     width: 100px; /* Adjust this size as needed */
-    height: auto; /* Maintain aspect ratio */
+    height: 100px; /* Maintain aspect ratio */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
